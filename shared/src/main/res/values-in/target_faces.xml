@@ -60,4 +60,5 @@
     <string name="recurve_style_x_8">Gaya recurve (X-8)</string>
     <string name="recurve_style_10_8">Gaya recurve (10-8)</string>
     <string name="compound_style">Gaya majemuk</string>
+    <string name="fcfs_color_reversed_24">FCFS Color (Reversed 10–1) Max 24</string>
 </resources>

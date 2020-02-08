@@ -51,7 +51,8 @@ class WAFull : TargetModelBase(
                 ScoringStyle(false, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1),
                 ScoringStyle(true, 5, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1),
                 ScoringStyle(false, 9, 9, 9, 7, 7, 5, 5, 3, 3, 1, 1),
-                ColorScoringStyle(R.string.fcfs_color_reversed, 31, 1, 1, 2, 4, 4, 6, 6, 8, 8, 10, 10)
+                ColorScoringStyle(R.string.fcfs_color_reversed, 31, 1, 1, 2, 4, 4, 6, 6, 8, 8, 10, 10),
+                ColorScoringStyle(R.string.fcfs_color_reversed_24, 24, 1, 1, 2, 4, 4, 6, 6, 8, 8, 10, 10)
         ),
         diameters = listOf(
                 Dimension(40f, CENTIMETER),

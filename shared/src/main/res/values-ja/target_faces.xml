@@ -60,4 +60,5 @@
     <string name="recurve_style_x_8">Recurve style (X–8)</string>
     <string name="recurve_style_10_8">Recurve style (10–8)</string>
     <string name="compound_style">Compound style</string>
+    <string name="fcfs_color_reversed_24">FCFS Color (Reversed 10–1) Max 24</string>
 </resources>

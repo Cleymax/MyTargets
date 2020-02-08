@@ -60,4 +60,5 @@
     <string name="recurve_style_x_8">Olimpiai stílus (X-8)</string>
     <string name="recurve_style_10_8">Olimpiai stílus (10-8)</string>
     <string name="compound_style">Csigás-íj tipusú</string>
+    <string name="fcfs_color_reversed_24">FCFS Color (Reversed 10–1) Max 24</string>
 </resources>
