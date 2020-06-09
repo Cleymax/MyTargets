@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyTargets.iml" filepath="$PROJECT_DIR$/MyTargets.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/buildSrc/buildSrc.iml" filepath="$PROJECT_DIR$/buildSrc/buildSrc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/shared/shared.iml" filepath="$PROJECT_DIR$/shared/shared.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tools/tools.iml" filepath="$PROJECT_DIR$/tools/tools.iml" />
-      <module fileurl="file://$PROJECT_DIR$/wearable/wearable.iml" filepath="$PROJECT_DIR$/wearable/wearable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyTargets.iml" filepath="$PROJECT_DIR$/MyTargets.iml" group="MyTargets" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MyTargets-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MyTargets-app.iml" group="MyTargets/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shared/MyTargets-shared.iml" filepath="$PROJECT_DIR$/.idea/modules/shared/MyTargets-shared.iml" group="MyTargets/shared" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wearable/MyTargets-wearable.iml" filepath="$PROJECT_DIR$/.idea/modules/wearable/MyTargets-wearable.iml" group="MyTargets/wearable" />
+      <module fileurl="file://$PROJECT_DIR$/tools/tools.iml" filepath="$PROJECT_DIR$/tools/tools.iml" group="MyTargets/tools" />
     </modules>
   </component>
 </project>
