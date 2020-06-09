@@ -29,7 +29,7 @@ android {
     defaultConfig {
         applicationId 'de.dreier.mytargets'
         minSdkVersion 23
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode gitVersionCode
         versionName gitVersionName
     }
