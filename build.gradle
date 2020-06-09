@@ -23,7 +23,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath 'com.android.tools.build:gradle:3.5.1'
         classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.8.6'
         classpath 'com.google.gms:google-services:4.3.3'
         classpath 'com.google.firebase:firebase-plugins:2.0.0'
@@ -35,7 +35,7 @@ buildscript {
 
 plugins {
     id 'com.mendhak.gradlecrowdin' version '0.1.0'
-    id 'com.github.ben-manes.versions' version '0.21.0'
+    id 'com.github.ben-manes.versions' version '0.28.0'
     id "org.ajoberstar.grgit" version "4.0.2" apply false
 }
 
