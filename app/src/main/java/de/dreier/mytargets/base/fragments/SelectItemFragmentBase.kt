@@ -105,7 +105,5 @@ abstract class SelectItemFragmentBase<T, U : ListAdapterBase<out ItemBindingHold
      *
      * @return The selected item
      */
-    protected open fun onSave(): T {
-        return adapter.getItemById(selector.getSelectedId()!!)!!
-    }
+    protected open fun onSave(): T = adapter.getItemById(selector.getSelectedId()!!)!!
 }

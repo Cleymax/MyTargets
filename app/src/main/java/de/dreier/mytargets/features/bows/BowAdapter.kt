@@ -55,10 +55,10 @@ internal class BowAdapter(
 
             val info = SpannedInfoBuilder(binding.root.context)
             info.addLine(R.string.bow_type, item.type!!)
-            if (!item.brand!!.trim { it <= ' ' }.isEmpty()) {
+            if (item.brand!!.trim { it <= ' ' }.isNotEmpty()) {
                 info.addLine(R.string.brand, item.brand!!)
             }
-            if (!item.size!!.trim { it <= ' ' }.isEmpty()) {
+            if (item.size!!.trim { it <= ' ' }.isNotEmpty()) {
                 info.addLine(R.string.size, item.size!!)
             }
             val sightMarks = bowDAO.loadSightMarks(item.id).sortedBy { it.distance }

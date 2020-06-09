@@ -22,13 +22,9 @@ import org.threeten.bp.format.DateTimeFormatter
 class LocalTimeConverters {
 
     @TypeConverter
-    fun getDBValue(model: LocalTime?): String? {
-        return model?.format(DateTimeFormatter.ISO_LOCAL_TIME)
-    }
+    fun getDBValue(model: LocalTime?): String? = model?.format(DateTimeFormatter.ISO_LOCAL_TIME)
 
     @TypeConverter
-    fun getModelValue(data: String?): LocalTime? {
-        return if (data != null) LocalTime.parse(data) else null
-    }
+    fun getModelValue(data: String?): LocalTime? = if (data != null) LocalTime.parse(data) else null
 
 }

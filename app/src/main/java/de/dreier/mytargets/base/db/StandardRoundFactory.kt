@@ -26,11 +26,11 @@ import de.dreier.mytargets.shared.models.db.StandardRound
 import de.dreier.mytargets.shared.targets.models.*
 
 object StandardRoundFactory {
-    const val IFAA = 8
     const val CUSTOM = 256
     private const val ASA = 1
     private const val AUSTRALIAN = 2
     private const val ARCHERY_GB = 4
+    private const val IFAA = 8
     private const val NASP = 16
     private const val NFAA = 32
     private const val NFAS = 64

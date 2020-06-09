@@ -118,9 +118,9 @@ class SettingsActivity : SimpleFragmentActivityBase(),
 //        }
     }
 
-    private fun handleSignInResult(account: GoogleSignInAccount) {
-        Timber.d("signed in")
+//    private fun handleSignInResult(account: GoogleSignInAccount) {
+//        Timber.d("signed in")
         // Signed in successfully, show authenticated UI.
 //            updateUI(account)
-    }
+//    }
 }

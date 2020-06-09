@@ -71,9 +71,7 @@ class HorizontalListAdapters(
         holder.itemView.setOnClickListener { clickListener.invoke(position) }
     }
 
-    override fun getItemCount(): Int {
-        return images.size() + 1
-    }
+    override fun getItemCount(): Int = images.size() + 1
 
     fun setSelectedItem(position: Int) {
         selectedItem = position

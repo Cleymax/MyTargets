@@ -21,8 +21,5 @@ import de.dreier.mytargets.base.activities.SimpleFragmentActivityBase
 
 class EditArrowActivity : SimpleFragmentActivityBase() {
 
-    override fun instantiateFragment(): Fragment {
-        return EditArrowFragment()
-    }
-
+    override fun instantiateFragment(): Fragment = EditArrowFragment()
 }

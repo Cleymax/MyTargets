@@ -36,8 +36,8 @@ abstract class HeaderListAdapter<C : IIdProvider>(
     override fun getHeaderHolder(
         parent: SimpleHeader,
         childComparator: Comparator<C>
-    ): HeaderListAdapterBase.HeaderHolder<SimpleHeader, C> {
-        return HeaderListAdapterBase.HeaderHolder(parent, childComparator)
+    ): HeaderHolder<SimpleHeader, C> {
+        return HeaderHolder(parent, childComparator)
     }
 
     override fun getItemPosition(item: C): Int {
@@ -58,7 +58,8 @@ abstract class HeaderListAdapter<C : IIdProvider>(
     }
 
     override fun getTopLevelViewHolder(parent: ViewGroup): HeaderViewHolder {
-        val itemView = LayoutInflater.from(parent.context)
+        val itemView = LayoutInflater
+            .from(parent.context)
             .inflate(R.layout.item_header, parent, false)
         return HeaderViewHolder(itemView)
     }
@@ -74,14 +75,9 @@ abstract class HeaderListAdapter<C : IIdProvider>(
 
     class SimpleHeader(index: Long, internal var title: String) : IIdProvider,
         Comparable<SimpleHeader> {
+
         override var id: Long = index
-
-        override fun compareTo(other: SimpleHeader): Int {
-            return id.compareTo(other.id)
-        }
-
-        override fun toString(): String {
-            return title
-        }
+        override fun compareTo(other: SimpleHeader): Int = id.compareTo(other.id)
+        override fun toString(): String = title
     }
 }

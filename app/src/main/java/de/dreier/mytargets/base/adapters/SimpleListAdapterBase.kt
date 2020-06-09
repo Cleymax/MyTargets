@@ -33,21 +33,14 @@ abstract class SimpleListAdapterBase<T>(
         super.setHasStableIds(true)
     }
 
-    override fun getItemId(position: Int): Long {
-        return list[position].id
-    }
+    override fun getItemId(position: Int): Long = list[position].id
 
-    override fun getItemCount(): Int {
-        return list.size
-    }
+    override fun getItemCount(): Int = list.size
 
-    override fun getItemViewType(position: Int): Int {
-        return super.getItemViewType(position) + 1
-    }
+    override fun getItemViewType(position: Int): Int = super.getItemViewType(position) + 1
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectableViewHolder<T> {
-        return onCreateViewHolder(parent)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectableViewHolder<T> =
+        onCreateViewHolder(parent)
 
     protected abstract fun onCreateViewHolder(parent: ViewGroup): SelectableViewHolder<T>
 
@@ -60,9 +53,7 @@ abstract class SimpleListAdapterBase<T>(
         notifyDataSetChanged()
     }
 
-    override fun getItem(position: Int): T? {
-        return list[position]
-    }
+    override fun getItem(position: Int): T? = list[position]
 
     override fun addItem(item: T) {
         val pos = list.binarySearch(item, comparator)
@@ -93,7 +84,5 @@ abstract class SimpleListAdapterBase<T>(
         notifyItemRemoved(pos)
     }
 
-    override fun getItemById(id: Long): T? {
-        return list.firstOrNull { it.id == id }
-    }
+    override fun getItemById(id: Long): T? = list.firstOrNull { it.id == id }
 }

@@ -75,7 +75,7 @@ class GalleryActivity : ChildActivityBase() {
         adapter = ViewPagerAdapter(this, imageList, binding.toolbar, binding.imagesHorizontalList)
         binding.pager.adapter = adapter
 
-        previewAdapter = HorizontalListAdapters(this, imageList, { this.goToImage(it) })
+        previewAdapter = HorizontalListAdapters(this, imageList) { this.goToImage(it) }
         binding.imagesHorizontalList.adapter = previewAdapter
         previewAdapter.notifyDataSetChanged()
 

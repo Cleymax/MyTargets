@@ -108,10 +108,10 @@ class ApplicationInstance : SharedApplicationInstance() {
         lateinit var db: AppDatabase
 
         val lastSharedPreferences: SharedPreferences
-            get() = SharedApplicationInstance.context.getSharedPreferences(MyBackupAgent.PREFS, 0)
+            get() = context.getSharedPreferences(MyBackupAgent.PREFS, 0)
 
         fun initRoomDb(context: Context) {
-            db = Room.databaseBuilder(
+            this.db = Room.databaseBuilder(
                 context,
                 AppDatabase::class.java, AppDatabase.DATABASE_FILE_NAME
             )

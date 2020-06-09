@@ -22,14 +22,12 @@ class EndRepository(
     private val endDAO: EndDAO
 ) {
     fun loadAugmentedEnds(roundId: Long): MutableList<AugmentedEnd> {
-        return endDAO.loadEnds(roundId)
-            .map {
-                AugmentedEnd(
-                    it,
-                    endDAO.loadShots(it.id).toMutableList(),
-                    endDAO.loadEndImages(it.id).toMutableList()
-                )
-            }
-            .toMutableList()
+        return endDAO.loadEnds(roundId).map {
+            AugmentedEnd(
+                it,
+                endDAO.loadShots(it.id).toMutableList(),
+                endDAO.loadEndImages(it.id).toMutableList()
+            )
+        }.toMutableList()
     }
 }

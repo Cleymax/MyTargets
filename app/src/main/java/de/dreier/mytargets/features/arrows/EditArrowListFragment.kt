@@ -44,8 +44,8 @@ class EditArrowListFragment : EditableListFragmentBase<Arrow, SimpleListAdapterB
     init {
         itemTypeDelRes = R.plurals.arrow_deleted
         actionModeCallback = ItemActionModeCallback(this, selector, R.plurals.arrow_selected)
-        actionModeCallback?.setEditCallback({ this.onEdit(it) })
-        actionModeCallback?.setDeleteCallback({ this.onDelete(it) })
+        actionModeCallback?.setEditCallback { this.onEdit(it) }
+        actionModeCallback?.setDeleteCallback { this.onDelete(it) }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -21,9 +21,7 @@ import de.dreier.mytargets.shared.models.Dimension
 class DimensionConverters {
 
     @TypeConverter
-    fun getDBValue(model: Dimension): String {
-        return "${model.value} ${model.unit}"
-    }
+    fun getDBValue(model: Dimension): String = "${model.value} ${model.unit}"
 
     @TypeConverter
     fun getModelValue(data: String): Dimension {
@@ -34,7 +32,6 @@ class DimensionConverters {
     }
 
     @TypeConverter
-    fun getDBValue(model: Dimension.Unit): String {
-        return model.toString()
-    }
+    fun getDBValue(model: Dimension.Unit): String = model.toString()
+
 }

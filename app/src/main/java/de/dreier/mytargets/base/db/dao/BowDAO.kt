@@ -57,19 +57,15 @@ abstract class BowDAO {
 
     @Transaction
     open fun saveBow(bow: Bow, images: List<BowImage>, sightMarks: List<SightMark>) {
-        if (bow.id > 0) {
-            updateBow(bow)
-        } else {
-            bow.id = insertBow(bow)
-        }
-        for (image in images) {
-            image.bowId = bow.id
-        }
+        if (bow.id > 0) updateBow(bow) else bow.id = insertBow(bow)
+
+        for (image in images) image.bowId = bow.id
+
         deleteBowImages(bow.id)
         insertBowImages(images)
-        for (sightMark in sightMarks) {
-            sightMark.bowId = bow.id
-        }
+
+        for (sightMark in sightMarks) sightMark.bowId = bow.id
+
         deleteSightMarks(bow.id)
         insertSightMarks(sightMarks)
     }

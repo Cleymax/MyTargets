@@ -23,15 +23,10 @@ import de.dreier.mytargets.shared.utils.toByteArray
 class BitmapConverters {
 
     @TypeConverter
-    fun getDBValue(model: Bitmap?): ByteArray? {
-        return model?.toByteArray()
-    }
+    fun getDBValue(model: Bitmap?): ByteArray? = model?.toByteArray()
 
     @TypeConverter
-    fun getModelValue(data: ByteArray?): Bitmap? {
-        return if (data != null) {
-            BitmapFactory.decodeByteArray(data, 0, data.size)
-        } else null
-    }
+    fun getModelValue(data: ByteArray?): Bitmap? =
+        if (data != null) BitmapFactory.decodeByteArray(data, 0, data.size) else null
 
 }

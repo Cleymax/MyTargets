@@ -41,21 +41,21 @@ class EditArrowViewModel(app: Application) : AndroidViewModel(app) {
     var images: LiveData<List<ArrowImage>>
 
     var name =
-        ObservableField<String>(getApplication<ApplicationInstance>().getString(R.string.my_arrow))
+        ObservableField(getApplication<ApplicationInstance>().getString(R.string.my_arrow))
     var maxArrowNumber = ObservableInt(12)
-    var length = ObservableField<String>("")
-    var material = ObservableField<String>("")
-    var spine = ObservableField<String>("")
-    var weight = ObservableField<String>("")
-    var tipWeight = ObservableField<String>("")
-    var vanes = ObservableField<String>("")
-    var nock = ObservableField<String>("")
-    var comment = ObservableField<String>("")
+    var length = ObservableField("")
+    var material = ObservableField("")
+    var spine = ObservableField("")
+    var weight = ObservableField("")
+    var tipWeight = ObservableField("")
+    var vanes = ObservableField("")
+    var nock = ObservableField("")
+    var comment = ObservableField("")
     var diameterValue = ObservableFloat(5f)
-    var diameterUnit = ObservableField<Dimension.Unit>(MILLIMETER)
+    var diameterUnit = ObservableField(MILLIMETER)
 
     var showAll = ObservableBoolean(false)
-    var diameterErrorText = ObservableField<String>("")
+    var diameterErrorText = ObservableField("")
 
     private val arrowDAO = ApplicationInstance.db.arrowDAO()
 

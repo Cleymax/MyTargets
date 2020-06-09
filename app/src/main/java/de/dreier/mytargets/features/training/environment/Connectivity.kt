@@ -41,7 +41,7 @@ internal object Connectivity {
      * Check if there is any connectivity to a mobile network
      */
     fun isConnectedMobile(context: Context): Boolean {
-        val info = Connectivity.getNetworkInfo(context)
+        val info = getNetworkInfo(context)
         return info != null && info.isConnected && info
             .type == ConnectivityManager.TYPE_MOBILE
     }

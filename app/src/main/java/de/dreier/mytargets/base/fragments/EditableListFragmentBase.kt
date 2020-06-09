@@ -80,11 +80,7 @@ abstract class EditableListFragmentBase<T, U : ListAdapterBase<*, T>> : Fragment
     }
 
     private fun deleteItems(deletedIds: List<Long>): MutableList<() -> T> {
-        val deleted = deletedIds
-            .map { id -> adapter!!.getItemById(id) }
-            .filter { item -> item != null }
-            .map { it!! }
-            .toMutableList()
+        val deleted = deletedIds.mapNotNull { adapter!!.getItemById(it) }.toMutableList()
         val undoActions = mutableListOf<() -> T>()
         for (item in deleted) {
             adapter!!.removeItem(item)
@@ -98,8 +94,7 @@ abstract class EditableListFragmentBase<T, U : ListAdapterBase<*, T>> : Fragment
     protected abstract fun deleteItem(item: T): () -> T
 
     private fun undoDeletion(deleted: MutableList<() -> T>) {
-        deleted.map { it.invoke() }
-            .forEach { adapter!!.addItem(it) }
+        deleted.map { it.invoke() }.forEach { adapter!!.addItem(it) }
         reloadData()
         deleted.clear()
     }

@@ -21,13 +21,9 @@ import de.dreier.mytargets.shared.models.EBowType
 class EBowTypeConverters {
 
     @TypeConverter
-    fun getDBValue(model: EBowType?): Int? {
-        return model?.ordinal
-    }
+    fun getDBValue(model: EBowType?): Int? = model?.ordinal
 
     @TypeConverter
-    fun getModelValue(data: Int?): EBowType? {
-        return if (data != null) EBowType.fromId(data) else null
-    }
+    fun getModelValue(data: Int?): EBowType? = if (data != null) EBowType.fromId(data) else null
 
 }

@@ -55,11 +55,9 @@ abstract class StandardRoundDAO {
 
     @Transaction
     open fun saveStandardRound(standardRound: StandardRound, roundTemplates: List<RoundTemplate>) {
-        if(standardRound.id == 0L) {
-            standardRound.id = insertStandardRound(standardRound)
-        } else {
-            updateStandardRound(standardRound)
-        }
+        if (standardRound.id == 0L) standardRound.id = insertStandardRound(standardRound)
+        else updateStandardRound(standardRound)
+
         deleteRoundTemplates(standardRound.id)
         for (roundTemplate in roundTemplates) {
             roundTemplate.standardRoundId = standardRound.id

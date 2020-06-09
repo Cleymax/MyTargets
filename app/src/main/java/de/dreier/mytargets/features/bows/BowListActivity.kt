@@ -20,7 +20,5 @@ import de.dreier.mytargets.base.activities.SimpleFragmentActivityBase
 
 class BowListActivity : SimpleFragmentActivityBase() {
 
-    public override fun instantiateFragment(): Fragment {
-        return BowListFragment()
-    }
+    public override fun instantiateFragment(): Fragment = BowListFragment()
 }

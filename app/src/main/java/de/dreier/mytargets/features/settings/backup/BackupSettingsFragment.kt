@@ -185,7 +185,7 @@ class BackupSettingsFragment : SettingsFragmentBase(), IAsyncBackupRestore.OnLoa
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         backup?.onActivityResult(requestCode, resultCode, data)
         if (requestCode == IMPORT_FROM_URI && resultCode == AppCompatActivity.RESULT_OK && data != null) {
-            importFromUri(data.data)
+            importFromUri(data.data!!)
         }
         super.onActivityResult(requestCode, resultCode, data)
     }

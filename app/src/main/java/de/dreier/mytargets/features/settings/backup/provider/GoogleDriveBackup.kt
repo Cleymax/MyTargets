@@ -22,9 +22,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.Scope
-import com.google.api.client.extensions.android.http.AndroidHttp
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential
 import com.google.api.client.http.FileContent
+import com.google.api.client.http.javanet.NetHttpTransport
 import com.google.api.client.json.gson.GsonFactory
 import com.google.api.services.drive.Drive
 import com.google.api.services.drive.DriveScopes
@@ -143,21 +143,21 @@ object GoogleDriveBackup {
             listener: IAsyncBackupRestore.BackupStatusListener
         ) {
             driveServiceHelper?.deleteFile(backup.fileId)
-                ?.addOnSuccessListener { aVoid -> listener.onFinished() }
+                ?.addOnSuccessListener { listener.onFinished() }
                 ?.addOnFailureListener { e -> listener.onError(e.localizedMessage) }
         }
 
         override fun onActivityResult(
             requestCode: Int,
             resultCode: Int,
-            resultData: Intent?
+            data: Intent?
         ): Boolean {
             Timber.d("onActivityResult: %d", resultCode)
 
             when (requestCode) {
-                REQUEST_CODE_SIGN_IN -> if (resultCode == Activity.RESULT_OK && resultData != null) {
-                    handleSignInResult(resultData)
-                } else if(resultCode == Activity.RESULT_CANCELED) {
+                REQUEST_CODE_SIGN_IN -> if (resultCode == Activity.RESULT_OK && data != null) {
+                    handleSignInResult(data)
+                } else if (resultCode == Activity.RESULT_CANCELED) {
                     listener?.onLoginCancelled()
                 }
 
@@ -237,11 +237,11 @@ object GoogleDriveBackup {
         // Use the authenticated account to sign in to the Drive service.
         val credential = GoogleAccountCredential.usingOAuth2(
             context,
-            Arrays.asList(DriveScopes.DRIVE_FILE, DriveScopes.DRIVE_APPDATA)
+            listOf(DriveScopes.DRIVE_FILE, DriveScopes.DRIVE_APPDATA)
         )
         credential.selectedAccount = googleAccount.account
         return Drive.Builder(
-            AndroidHttp.newCompatibleTransport(),
+            NetHttpTransport.Builder().build(),
             GsonFactory(),
             credential
         )

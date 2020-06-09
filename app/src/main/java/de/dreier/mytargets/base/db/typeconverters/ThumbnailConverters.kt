@@ -21,13 +21,9 @@ import de.dreier.mytargets.shared.models.Thumbnail
 class ThumbnailConverters {
 
     @TypeConverter
-    fun getDBValue(model: Thumbnail?): ByteArray? {
-        return model?.data
-    }
+    fun getDBValue(model: Thumbnail?): ByteArray? = model?.data
 
     @TypeConverter
-    fun getModelValue(data: ByteArray?): Thumbnail? {
-        return if (data != null) Thumbnail(data) else null
-    }
+    fun getModelValue(data: ByteArray?): Thumbnail? = if (data != null) Thumbnail(data) else null
 
 }

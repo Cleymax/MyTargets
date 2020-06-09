@@ -24,14 +24,19 @@ import android.view.View
  */
 abstract class HeaderBindingHolder<T>(itemView: View) : ItemBindingHolder<T>(itemView) {
 
-    override fun onClick(v: View) {}
+    override fun onClick(v: View) {
+        throw IllegalAccessError()
+    }
 
-    @Suppress("RedundantSetter")
     override var isSelectable: Boolean
         get() = false
-        set(value) {}
+        set(value) {
+            throw IllegalAccessError()
+        }
 
-    override fun onRebind() {}
+    override fun onRebind() {
+        throw IllegalAccessError()
+    }
 
     override var isActivated: Boolean
         get() = itemView.isActivated

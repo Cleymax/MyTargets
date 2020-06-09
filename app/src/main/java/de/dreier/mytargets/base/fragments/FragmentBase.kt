@@ -74,17 +74,17 @@ abstract class FragmentBase : Fragment(),
     }
 
     protected fun reloadData() {
-        if (loaderManager.getLoader<Any>(LOADER_ID) != null) {
-            loaderManager.destroyLoader(LOADER_ID)
+        if (LoaderManager.getInstance(this).getLoader<Any>(LOADER_ID) != null) {
+            LoaderManager.getInstance(this).destroyLoader(LOADER_ID)
         }
-        loaderManager.restartLoader(LOADER_ID, null, this).forceLoad()
+        LoaderManager.getInstance(this).restartLoader(LOADER_ID, null, this).forceLoad()
     }
 
     protected fun reloadData(args: Bundle) {
-        if (loaderManager.getLoader<Any>(LOADER_ID) != null) {
-            loaderManager.destroyLoader(LOADER_ID)
+        if (LoaderManager.getInstance(this).getLoader<Any>(LOADER_ID) != null) {
+            LoaderManager.getInstance(this).destroyLoader(LOADER_ID)
         }
-        loaderManager.restartLoader(LOADER_ID, args, this).forceLoad()
+        LoaderManager.getInstance(this).restartLoader(LOADER_ID, args, this).forceLoad()
     }
 
     companion object {

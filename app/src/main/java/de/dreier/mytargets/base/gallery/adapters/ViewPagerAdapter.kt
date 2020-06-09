@@ -42,13 +42,9 @@ class ViewPagerAdapter(
     private val layoutInflater = LayoutInflater.from(activity)
     private var isShowing = true
 
-    override fun getCount(): Int {
-        return images.size()
-    }
+    override fun getCount(): Int = images.size()
 
-    override fun isViewFromObject(view: View, `object`: Any): Boolean {
-        return view == `object`
-    }
+    override fun isViewFromObject(view: View, `object`: Any): Boolean = view == `object`
 
     override fun getItemPosition(`object`: Any): Int {
         return PagerAdapter.POSITION_NONE
@@ -68,9 +64,7 @@ class ViewPagerAdapter(
                     imageView.setOnPhotoTapListener { _, _, _ -> toggleToolbar() }
                 }
 
-                override fun onError() {
-
-                }
+                override fun onError() {}
             })
 
         container.addView(itemView)

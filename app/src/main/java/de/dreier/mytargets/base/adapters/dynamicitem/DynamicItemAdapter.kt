@@ -55,7 +55,5 @@ abstract class DynamicItemAdapter<T>(
         this.list = list
     }
 
-    override fun getItemCount(): Int {
-        return list.size
-    }
+    override fun getItemCount(): Int = list.size
 }

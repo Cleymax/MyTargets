@@ -21,13 +21,9 @@ import de.dreier.mytargets.shared.models.EWeather
 class EWeatherConverters {
 
     @TypeConverter
-    fun getDBValue(model: EWeather?): Int? {
-        return model?.ordinal //TODO migrate to save name instead of ordinal
-    }
+    fun getDBValue(model: EWeather?): Int? = model?.ordinal
 
     @TypeConverter
-    fun getModelValue(data: Int?): EWeather? {
-        return if (data != null) EWeather.getOfValue(data) else null
-    }
+    fun getModelValue(data: Int?): EWeather? = if (data != null) EWeather.getOfValue(data) else null
 
 }
