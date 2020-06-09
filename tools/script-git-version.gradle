@@ -17,12 +17,16 @@ import org.ajoberstar.grgit.Grgit
 
 buildscript {
     repositories {
-        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
-        classpath 'org.ajoberstar:grgit:2.1.0'
+        classpath "org.ajoberstar.grgit:grgit-gradle:4.0.2"
     }
 }
+
+apply plugin: "org.ajoberstar.grgit"
 
 ext {
     try {
@@ -32,12 +36,9 @@ ext {
                 .replace("v", "")
                 .replace("_b", "-Beta")
                 .replace("_rc", "-RC")
-        if(System.getenv('TRAVIS') == 'true') {
-            gitBranchName = System.getenv('TRAVIS_BRANCH')
-        } else {
-            gitBranchName = git.branch.getCurrent().name
-        }
-    } catch(Exception e) {
+
+        gitBranchName = System.getenv("TRAVIS") == "true" ? System.getenv('TRAVIS_BRANCH') : git.branch.current().name
+    } catch (Exception ignored) {
         gitVersionCode = 1
         gitVersionName = "debug"
         gitBranchName = "debug"
