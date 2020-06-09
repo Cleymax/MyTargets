@@ -61,3 +61,5 @@ google-services.json
 firebase-crashreporting.json
 services.tar
 .idea/assetWizardSettings.xml
+
+.idea/sonarlint
